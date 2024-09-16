@@ -1,3 +1,7 @@
 [build]
-  command = "npm run build"
-  publish = "public"
+  command = "npm start"
+  publish = "public"  # Replace with the directory containing your static files if needed
+
+[dev]
+  functions = "netlify-functions" # Optional: if using Netlify functions
+  port = 3000

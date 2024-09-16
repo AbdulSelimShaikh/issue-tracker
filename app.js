@@ -7,10 +7,15 @@ const projectsRouter = require("./routes/projects");
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect("mongodb://localhost/issue-tracker", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+require("dotenv").config();
+
+mongoose
+  .connect(process.env.MONGODB_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => console.log("Connected to MongoDB Atlas"))
+  .catch((err) => console.error("Error connecting to MongoDB Atlas:", err));
 
 // Middleware
 app.use(express.json());

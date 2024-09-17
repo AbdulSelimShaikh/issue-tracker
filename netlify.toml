@@ -1,7 +1,7 @@
 [build]
   command = "npm start" # Start your server
-  publish = "public"    # Change if you have a different directory for static files
+  publish = "." # Publish the root directory if no static folder
 
 [dev]
-  functions = "netlify-functions" # Optional: if you're using Netlify functions
+  functions = "netlify-functions" # Optional: if using Netlify functions
   port = 3000
